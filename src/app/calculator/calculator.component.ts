@@ -18,7 +18,7 @@ export class CalculatorComponent implements OnInit {
     timestamp: string;
     timer: NodeJS.Timer;
     runTimer = true;
-
+    valid = true;
     constructor(
         private authenticator: AuthService
     ) { }
@@ -28,6 +28,8 @@ export class CalculatorComponent implements OnInit {
     }
 
     generateSignature() {
+        this.validate();
+        if(!this.valid) return;
         this.signature = this.authenticator.sign(
             this.url,
             this.publicKey,
@@ -37,6 +39,19 @@ export class CalculatorComponent implements OnInit {
             this.onBehalfOf,
             this.httpMethod,
         );
+    }
+
+    validate(){
+        this.valid = this.url !== null 
+        && this.url !== undefined 
+        && this.url.length > 0 
+        && this.privateKey !== null 
+        && this.privateKey !== undefined 
+        && this.privateKey.length > 0 
+        && this.publicKey !== null 
+        && this.publicKey !== undefined 
+        && this.publicKey.length > 0 
+        return this.valid;
     }
 
     toggleTimer() {

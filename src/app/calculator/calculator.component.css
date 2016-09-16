@@ -9,3 +9,8 @@
 .signature{
     width:100%;
 }
+
+.mdl-textfield__error{
+    visibility: visible;
+    position: relative;
+}
