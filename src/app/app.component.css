@@ -8,3 +8,7 @@ input{
      your background is light. */
   color: rbga(0,0,0,.87);
 }
+
+main{
+  margin-top: 2em;
+}

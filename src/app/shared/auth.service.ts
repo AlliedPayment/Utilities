@@ -13,7 +13,6 @@ export class AuthService {
         onBehalfOf?: string,
         httpMethod?: string,
     ): string {
-        debugger;
         let newline = '\r\n';
         let ts = new Date().toISOString();
         var message = `${url}${newline}${ts}${newline}`;

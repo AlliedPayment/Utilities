@@ -48,7 +48,7 @@
     </div>
     <div class="mdl-cell mdl-cell--12-col">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input [(ngModel)]="httpMethod" class="mdl-textfield__input" type="text" id="onBehalfOf">
+            <input [(ngModel)]="onBehalfOf" class="mdl-textfield__input" type="text" id="onBehalfOf">
             <label class="mdl-textfield__label" for="onBehalfOf">On Behalf Of</label>
         </div>
     </div>
@@ -62,6 +62,6 @@
         <button type="button" (click)="generateSignature()">Submit</button>
     </div>
     <div class="mdl-cell mdl-cell--12-col">
-        {{signature}}
+        <p class="signature">{{signature}}</p>
     </div>
 </div>
