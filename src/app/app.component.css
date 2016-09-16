@@ -12,3 +12,7 @@ input{
 main{
   margin-top: 2em;
 }
+.title{
+  width:100%;
+  text-align: center;
+}

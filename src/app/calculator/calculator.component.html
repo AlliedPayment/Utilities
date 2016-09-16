@@ -5,54 +5,50 @@
             <label class="mdl-textfield__label" for="url">Url</label>
         </div>
     </div>
-    <div class="mdl-cell mdl-cell--12-col">
-        <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--2-col">
-                <button (click)="toggleTimer()" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
-                    <i *ngIf="runTimer" class="material-icons">check_box</i>
-                    <i *ngIf="!runTimer" class="material-icons">check_box_outline_blank</i>
-                </button>
-                <h4 class="inline"><small>Toggle Timer</small></h4>
-            </div>
-        </div>
+    <div class="mdl-cell mdl-cell--6-col">
+        <button (click)="toggleTimer()" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+            <i *ngIf="runTimer" class="material-icons">check_box</i>
+            <i *ngIf="!runTimer" class="material-icons">check_box_outline_blank</i>
+        </button>
+        <h4 class="inline"><small>Toggle Timer</small></h4>
     </div>
-    <div class="mdl-cell mdl-cell--12-col">
+    <div class="mdl-cell mdl-cell--6-col">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
             <input [(ngModel)]="timestamp" class="mdl-textfield__input" type="text" id="timestamp">
             <label class="mdl-textfield__label" for="timestamp">Timestamp</label>
         </div>
     </div>
-    <div class="mdl-cell mdl-cell--12-col">
+    <div class="mdl-cell mdl-cell--6-col">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input [(ngModel)]="publicKey" class="mdl-textfield__input" type="text" id="publicKey">
             <label class="mdl-textfield__label" for="publicKey">Public Key</label>
         </div>
     </div>
-    <div class="mdl-cell mdl-cell--12-col">
+    <div class="mdl-cell mdl-cell--6-col">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input [(ngModel)]="privateKey" class="mdl-textfield__input" type="text" id="privateKey">
             <label class="mdl-textfield__label" for="privateKey">Private Key</label>
         </div>
     </div>
-    <div class="mdl-cell mdl-cell--12-col">
+    <div class="mdl-cell mdl-cell--6-col">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input [(ngModel)]="username" class="mdl-textfield__input" type="text" id="username">
             <label class="mdl-textfield__label" for="username">Username</label>
         </div>
     </div>
-    <div class="mdl-cell mdl-cell--12-col">
+    <div class="mdl-cell mdl-cell--6-col">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input [(ngModel)]="domain" class="mdl-textfield__input" type="text" id="domain">
             <label class="mdl-textfield__label" for="domain">Domain</label>
         </div>
     </div>
-    <div class="mdl-cell mdl-cell--12-col">
+    <div class="mdl-cell mdl-cell--6-col">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input [(ngModel)]="onBehalfOf" class="mdl-textfield__input" type="text" id="onBehalfOf">
             <label class="mdl-textfield__label" for="onBehalfOf">On Behalf Of</label>
         </div>
     </div>
-    <div class="mdl-cell mdl-cell--12-col">
+    <div class="mdl-cell mdl-cell--6-col">
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input [(ngModel)]="httpMethod" class="mdl-textfield__input" type="text" id="httpMethod">
             <label class="mdl-textfield__label" for="httpMethod">Http Method</label>
