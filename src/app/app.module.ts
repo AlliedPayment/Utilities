@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {AuthService} from './shared';
 import { AppComponent } from './app.component';
+import {CalculatorComponent} from './calculator';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,
