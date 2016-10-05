@@ -14,3 +14,9 @@
     visibility: visible;
     position: relative;
 }
+
+.form-container{
+    background: #fff;
+    margin: 0 3em;
+    border-radius: 10px;
+}

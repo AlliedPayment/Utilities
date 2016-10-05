@@ -8,13 +8,14 @@ export class AuthService {
         url: string,
         publicKey: string,
         privateKey: string,
+        timestamp?:string,
         username?: string,
         domain?: string,
         onBehalfOf?: string,
         httpMethod?: string,
     ): string {
         let newline = '\r\n';
-        let ts = new Date().toISOString();
+        let ts = (timestamp) ? timestamp :  new Date().toISOString();
         var message = `${url}${newline}${ts}${newline}`;
         message = (username) ? `${message}${username}${newline}` : message;
         message = (domain) ? `${message}${domain}${newline}` : message;

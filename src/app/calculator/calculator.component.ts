@@ -34,6 +34,7 @@ export class CalculatorComponent implements OnInit {
             this.url,
             this.publicKey,
             this.privateKey,
+            this.timestamp,
             this.username,
             this.domain,
             this.onBehalfOf,
