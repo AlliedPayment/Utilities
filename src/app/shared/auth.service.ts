@@ -17,10 +17,6 @@ export class AuthService {
         let newline = '\r\n';
         let ts = (timestamp) ? timestamp :  new Date().toISOString();
         var message = `${url}${newline}${ts}${newline}`;
-        message = (username) ? `${message}${username}${newline}` : message;
-        message = (domain) ? `${message}${domain}${newline}` : message;
-        message = (onBehalfOf) ? `${message}${onBehalfOf}${newline}` : message;
-        message = (httpMethod) ? `${message}${httpMethod}${newline}` : message;
 
         let hash = CryptoJS.HmacSHA1(message, privateKey);
         let sig = hash.toString(CryptoJS.enc.Base64);
