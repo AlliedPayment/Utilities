@@ -4,6 +4,7 @@
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input [(ngModel)]="url" class="mdl-textfield__input" type="text" id="url">
             <label class="mdl-textfield__label" for="url">Url</label>
+            <span *ngIf="!url" class="mdl-textfield__error">This field is required!</span>
         </div>
         <br />
         <button (click)="toggleTimer()" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
@@ -15,14 +16,17 @@
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
             <input [(ngModel)]="timestamp" class="mdl-textfield__input" type="text" id="timestamp">
             <label class="mdl-textfield__label" for="timestamp">Timestamp</label>
+            <span *ngIf="!timestamp" class="mdl-textfield__error">This field is required!</span>
         </div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input [(ngModel)]="publicKey" class="mdl-textfield__input" type="text" id="publicKey">
             <label class="mdl-textfield__label" for="publicKey">Public Key</label>
+            <span *ngIf="!publicKey" class="mdl-textfield__error">This field is required!</span>
         </div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input [(ngModel)]="privateKey" class="mdl-textfield__input" type="text" id="privateKey">
             <label class="mdl-textfield__label" for="privateKey">Private Key</label>
+            <span *ngIf="!privateKey" class="mdl-textfield__error">This field is required!</span>
         </div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input [(ngModel)]="username" class="mdl-textfield__input" type="text" id="username">
@@ -41,22 +45,12 @@
             <label class="mdl-textfield__label" for="httpMethod">Http Method</label>
         </div>
     </div>
-    <div *ngIf="!valid" class="mdl-cell  mdl-cell--2-col">
-        <span class="mdl-textfield__error">
-          <h3><small>Required Fields</small></h3>
-          <ul>
-              <li>Url</li>
-              <li>PrivateKey</li>
-              <li>PublicKey</li>
-          </ul>
-      </span>
-    </div>
     <div class="mdl-layout-spacer"></div>
     <div class="mdl-cell mdl-cell--12-col">
         <div class="mdl-grid">
             <div class="mdl-layout-spacer"></div>
             <div class="mdl-cell mdl-cell--4-col">
-                <button type="button" (click)="generateSignature()">Submit</button>
+                <button (click)="generateSignature()" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Submit</button>
             </div>
             <div class="mdl-layout-spacer"></div>
             <div *ngIf="signature" class="mdl-cell mdl-cell--12-col">

@@ -20,3 +20,7 @@
     margin: 0 3em;
     border-radius: 10px;
 }
+
+.mdl-textfield{
+    width: 100%;
+}
