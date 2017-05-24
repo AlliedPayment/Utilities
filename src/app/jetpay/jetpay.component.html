@@ -1,0 +1,38 @@
+<div class="form-container mdl-grid">
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--4-col">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
+            <input [(ngModel)]="tid" class="mdl-textfield__input" type="text" id="tid">
+            <label class="mdl-textfield__label" for="tid">TID</label>
+            <span *ngIf="!tid" class="mdl-textfield__error">This field is required!</span>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input [(ngModel)]="amount" class="mdl-textfield__input" type="text" id="amount">
+            <label class="mdl-textfield__label" for="amount">Amount</label>
+            <span *ngIf="!amount" class="mdl-textfield__error">This field is required!</span>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input [(ngModel)]="token" class="mdl-textfield__input" type="text" id="token">
+            <label class="mdl-textfield__label" for="token">Token</label>
+            <span *ngIf="!token" class="mdl-textfield__error">This field is required!</span>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input [(ngModel)]="orderNumber" class="mdl-textfield__input" type="text" id="orderNumber">
+            <label class="mdl-textfield__label" for="orderNumber">Order Number</label>
+        </div>
+    </div>
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-cell mdl-cell--12-col">
+        <div class="mdl-grid">
+            <div class="mdl-layout-spacer"></div>
+            <div class="mdl-cell mdl-cell--4-col">
+                <button (click)="generateHash()" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Submit</button>
+            </div>
+            <div class="mdl-layout-spacer"></div>
+            <div *ngIf="hash" class="mdl-cell mdl-cell--12-col">
+                <h5><small>Result</small></h5>
+                <textarea class="signature">{{hash}}</textarea>
+            </div>
+        </div>
+    </div>
+</div>

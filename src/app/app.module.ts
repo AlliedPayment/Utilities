@@ -2,14 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {AuthService} from './shared';
+import { AuthService } from './shared';
 import { AppComponent } from './app.component';
-import {CalculatorComponent} from './calculator';
+import { CalculatorComponent } from './calculator';
+import { JetpayComponent } from './jetpay/jetpay.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CalculatorComponent
+    CalculatorComponent,
+    JetpayComponent
   ],
   imports: [
     BrowserModule,
