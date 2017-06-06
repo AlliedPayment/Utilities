@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CryptoService } from "../shared";
 
 @Component({
@@ -6,7 +6,7 @@ import { CryptoService } from "../shared";
   templateUrl: './encoder.component.html',
   styleUrls: ['./encoder.component.css']
 })
-export class EncoderComponent implements OnInit {
+export class EncoderComponent {
   result: string;
   api: string = 'https://api.demo.alliedpayment.com';
   domain: string = 'ALLIED';
@@ -33,15 +33,11 @@ export class EncoderComponent implements OnInit {
     private crypto: CryptoService
   ) { }
 
-  ngOnInit() {
-  }
-
   encode() {
     const data = this.getParams();
     const base64 = this.crypto.base64(data);
     this.result = `?data=${base64}`;
   }
-
 
   getParams(): string {
     let query = `?`;
