@@ -40,27 +40,27 @@ export class EncoderComponent {
   }
 
   getParams(): string {
-    let query = `?`;
-    this.addParam(query, 'api', this.api);
-    this.addParam(query, 'dmn', this.domain);
-    this.addParam(query, 'rtng', this.routingNumber);
-    this.addParam(query, 'apprvd', this.approvedUrl);
-    this.addParam(query, 'dclnd', this.declinedUrl);
-    this.addParam(query, 'isFund', this.isFundingAccount);
-    this.addParam(query, 'cstNm', this.customerName);
-    this.addParam(query, 'cstAddr', this.address);
-    this.addParam(query, 'cstCty', this.city);
-    this.addParam(query, 'cstSt', this.city);
-    this.addParam(query, 'cstZp', this.zip);
-    this.addParam(query, 'cstPhn', this.phone);
-    this.addParam(query, 'cstEml', this.email);
-    this.addParam(query, 'lnNm', this.loanNumber);
-    this.addParam(query, 'lnAm', this.loanAmount);
-    this.addParam(query, 'memo', this.loanMemo);
-    this.addParam(query, 'bnkAcnt', this.bankAccount);
-    this.addParam(query, 'bnkRt', this.bankRouting);
-    this.addParam(query, 'bnkNm', this.bankName);
-    this.addParam(query, 'acntTp', this.accountType);
+    var query = `?`;
+    query = this.addParam(query, 'api', this.api);
+    query = this.addParam(query, 'dmn', this.domain);
+    query = this.addParam(query, 'rtng', this.routingNumber);
+    query = this.addParam(query, 'apprvd', this.approvedUrl);
+    query = this.addParam(query, 'dclnd', this.declinedUrl);
+    query = this.addParam(query, 'isFund', this.isFundingAccount);
+    query = this.addParam(query, 'cstNm', this.customerName);
+    query = this.addParam(query, 'cstAddr', this.address);
+    query = this.addParam(query, 'cstCty', this.city);
+    query = this.addParam(query, 'cstSt', this.city);
+    query = this.addParam(query, 'cstZp', this.zip);
+    query = this.addParam(query, 'cstPhn', this.phone);
+    query = this.addParam(query, 'cstEml', this.email);
+    query = this.addParam(query, 'lnNm', this.loanNumber);
+    query = this.addParam(query, 'lnAm', this.loanAmount);
+    query = this.addParam(query, 'memo', this.loanMemo);
+    query = this.addParam(query, 'bnkAcnt', this.bankAccount);
+    query = this.addParam(query, 'bnkRt', this.bankRouting);
+    query = this.addParam(query, 'bnkNm', this.bankName);
+    query = this.addParam(query, 'acntTp', this.accountType);
     return query;
   }
 
