@@ -42,7 +42,34 @@ export class EncoderComponent implements OnInit {
     this.result = `?data=${base64}`;
   }
 
+
   getParams(): string {
-    return `?api=${this.api}&dmn=${this.domain}&rtng=${this.routingNumber}&apprvd=${this.approvedUrl}&dclnd=${this.declinedUrl}&isFund=${this.isFundingAccount}&cstNm=${this.customerName}&cstAddr=${this.address}&cstCty=${this.city}&cstSt=${this.state}&cstZp=${this.zip}&cstPhn=${this.phone}&cstEml=${this.email}&lnNm=${this.loanNumber}&lnAm=${this.loanAmount}&memo=${this.loanMemo}&bnkAcnt=${this.bankAccount}&bnkRt=${this.bankRouting}&bnkNm=${this.bankName}&acntTp=${this.accountType}`;
+    let query = `?`;
+    this.addParam(query, 'api', this.api);
+    this.addParam(query, 'dmn', this.domain);
+    this.addParam(query, 'rtng', this.routingNumber);
+    this.addParam(query, 'apprvd', this.approvedUrl);
+    this.addParam(query, 'dclnd', this.declinedUrl);
+    this.addParam(query, 'isFund', this.isFundingAccount);
+    this.addParam(query, 'cstNm', this.customerName);
+    this.addParam(query, 'cstAddr', this.address);
+    this.addParam(query, 'cstCty', this.city);
+    this.addParam(query, 'cstSt', this.city);
+    this.addParam(query, 'cstZp', this.zip);
+    this.addParam(query, 'cstPhn', this.phone);
+    this.addParam(query, 'cstEml', this.email);
+    this.addParam(query, 'lnNm', this.loanNumber);
+    this.addParam(query, 'lnAm', this.loanAmount);
+    this.addParam(query, 'memo', this.loanMemo);
+    this.addParam(query, 'bnkAcnt', this.bankAccount);
+    this.addParam(query, 'bnkRt', this.bankRouting);
+    this.addParam(query, 'bnkNm', this.bankName);
+    this.addParam(query, 'acntTp', this.accountType);
+    return query;
+  }
+
+  addParam(query, name, value) {
+    const encoded = encodeURIComponent(value);
+    return `${query}&${name}=${encoded}`;
   }
 }
