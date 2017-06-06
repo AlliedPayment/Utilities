@@ -1,50 +1,50 @@
-input{
-    width:100%;
+input {
+    width: 100%;
 }
 
 .layout-transparent .mdl-layout__header,
 .layout-transparent .mdl-layout__drawer-button {
-  /* This background is dark, so we set text to white. Use 87% black instead if
+    /* This background is dark, so we set text to white. Use 87% black instead if
      your background is light. */
-  color: rbga(0,0,0,.87);
+    color: rbga(0, 0, 0, .87);
 }
 
-main{
-  margin-top: 2em;
-}
-.title{
-  width:100%;
-  text-align: center;
-  color: rebeccapurple;
+main {
+    margin-top: 2em;
 }
 
-.always-float > label{
-    top:4px;
-    font-size:12px;
+.title {
+    width: 100%;
+    text-align: center;
+    color: rebeccapurple;
 }
 
-.inline{
-    display:inline;
-}
-.signature{
-    width:100%;
+.always-float>label {
+    top: 4px;
+    font-size: 12px;
 }
 
-.mdl-textfield__error{
-    visibility: visible;
-    position: relative;
+.inline {
+    display: inline;
 }
 
-.form-container{
-    background: #fff;
+.results {
+    width: 100%;
+}
+
+.form-container {
     margin: 0 3em;
     border-radius: 10px;
 }
 
-.mdl-textfield{
+.mdl-textfield {
     width: 100%;
 }
 
-.form-container{
-    margin:3em;
+.form-container {
+    margin: 3em;
+}
+
+textarea {
+    width: 100%;
 }

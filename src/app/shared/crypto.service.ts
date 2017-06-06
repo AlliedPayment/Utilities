@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 declare var CryptoJS: any;
 
 @Injectable()
-export class AuthService {
+export class CryptoService {
     sign(
         url: string,
         publicKey: string,
@@ -45,5 +45,9 @@ export class AuthService {
         let message = `${tid}${amount}${token}${orderNumber}`;
         let hash = CryptoJS.SHA512(message).toString();
         return hash;
+    }
+
+    base64(data:string){
+        return btoa(data);
     }
 }

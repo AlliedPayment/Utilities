@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../shared';
+import { CryptoService } from '../shared';
 
 @Component({
     selector: 'calculator',
@@ -19,7 +19,7 @@ export class CalculatorComponent implements OnInit {
     timer: NodeJS.Timer;
     runTimer = true;
     constructor(
-        private authenticator: AuthService
+        private crypto: CryptoService
     ) { }
 
     ngOnInit() {
@@ -28,7 +28,7 @@ export class CalculatorComponent implements OnInit {
 
     generateSignature() {
         if (!this.isValid) return;
-        this.signature = this.authenticator.sign(
+        this.signature = this.crypto.sign(
             this.url,
             this.publicKey,
             this.privateKey,

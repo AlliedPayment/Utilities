@@ -6,17 +6,16 @@
             <label class="mdl-textfield__label" for="url">Url</label>
             <span *ngIf="!url" class="mdl-textfield__error">This field is required!</span>
         </div>
-        <br />
-        <button (click)="toggleTimer()" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
-            <i *ngIf="runTimer" class="material-icons">check_box</i>
-            <i *ngIf="!runTimer" class="material-icons">check_box_outline_blank</i>
-        </button>
-        <h4 class="inline"><small>Toggle Timer</small></h4>
-        <br />
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
-            <input [(ngModel)]="timestamp" class="mdl-textfield__input" type="text" id="timestamp">
-            <label class="mdl-textfield__label" for="timestamp">Timestamp</label>
-            <span *ngIf="!timestamp" class="mdl-textfield__error">This field is required!</span>
+        <div>
+            <button id="timer-toggle" (click)="toggleTimer()" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                <i *ngIf="runTimer" class="material-icons">check_box</i>
+                <i *ngIf="!runTimer" class="material-icons">check_box_outline_blank</i>
+             </button>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
+                <input #timer [(ngModel)]="timestamp" class="mdl-textfield__input" type="text" id="timestamp">
+                <label class="mdl-textfield__label" for="timestamp">Timestamp</label>
+                <span *ngIf="!timestamp" class="mdl-textfield__error">This field is required!</span>
+            </div>
         </div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input [(ngModel)]="publicKey" class="mdl-textfield__input" type="text" id="publicKey">
@@ -55,7 +54,7 @@
             <div class="mdl-layout-spacer"></div>
             <div *ngIf="signature" class="mdl-cell mdl-cell--12-col">
                 <h5><small>Result</small></h5>
-                <textarea class="signature">{{signature}}</textarea>
+                <textarea class="results">{{signature}}</textarea>
             </div>
         </div>
     </div>

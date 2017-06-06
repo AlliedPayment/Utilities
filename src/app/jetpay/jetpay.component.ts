@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../shared';
+import { CryptoService } from '../shared';
 
 @Component({
   selector: 'app-jetpay',
@@ -13,11 +13,11 @@ export class JetpayComponent {
   orderNumber = '';
   hash: string = null;
   constructor(
-    private authService: AuthService
+    private crypto: CryptoService
   ) { }
 
   generateHash() {
-    this.hash = this.authService.hashForJetpay(this.tid, this.amount, this.token, this.orderNumber)
+    this.hash = this.crypto.hashForJetpay(this.tid, this.amount, this.token, this.orderNumber)
   }
 
 }
