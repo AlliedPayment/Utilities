@@ -6,6 +6,14 @@
             <label class="mdl-textfield__label" for="api">API</label>
         </div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
+            <input [(ngModel)]="approvedUrl" class="mdl-textfield__input" type="text" id="approvedUrl">
+            <label class="mdl-textfield__label" for="approvedUrl">Approved Url</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
+            <input [(ngModel)]="declinedUrl" class="mdl-textfield__input" type="text" id="declinedUrl">
+            <label class="mdl-textfield__label" for="declinedUrl">Decline dUrl</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
             <input [(ngModel)]="domain" class="mdl-textfield__input" type="text" id="domain">
             <label class="mdl-textfield__label" for="domain">DOMAIN</label>
         </div>

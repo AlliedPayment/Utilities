@@ -11,8 +11,8 @@ export class EncoderComponent {
   api: string = 'https://api.demo.alliedpayment.com';
   domain: string = 'ALLIED';
   routingNumber: string = '074903719';
-  approvedUrl: string = 'https://billpay.demo.alliedpayment.com/PortalPay/app/approved.html';
-  declinedUrl: string = 'https://billpay.demo.alliedpayment.com/PortalPay/app/declined.html';
+  approvedUrl: string = `https://${this.domain}.demo.alliedpayment.com/PortalPay/app/approved.html`;
+  declinedUrl: string = `https://${this.domain}.demo.alliedpayment.com/PortalPay/app/declined.html`;
   isFundingAccount: boolean = false;
   customerName: string = 'Test User';
   address: string = '3201 Stelhorn Rd';
