@@ -50,7 +50,7 @@ export class EncoderComponent {
     query = this.addParam(query, 'cstNm', this.customerName);
     query = this.addParam(query, 'cstAddr', this.address);
     query = this.addParam(query, 'cstCty', this.city);
-    query = this.addParam(query, 'cstSt', this.city);
+    query = this.addParam(query, 'cstSt', this.state);
     query = this.addParam(query, 'cstZp', this.zip);
     query = this.addParam(query, 'cstPhn', this.phone);
     query = this.addParam(query, 'cstEml', this.email);
