@@ -26,7 +26,7 @@ export class EncoderComponent {
   loanMemo: string = 'hello memo';
   bankAccount: string = '9876543210';
   bankRouting: string = '074000010';
-  bankName: string = 'Fake Chase';
+  bankName: string = '';
   accountType: string = 'Checking';
 
   constructor(
