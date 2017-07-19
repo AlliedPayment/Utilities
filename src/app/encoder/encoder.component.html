@@ -5,73 +5,73 @@
     </div>
 
     <md-input-container>
-        <input mdInput [(ngModel)]="domain" type="text" name="domain" id="domain" placeholder="domain">
+        <input mdInput [ngModel]="domain" (ngModelChange)="changeDomain($event)" type="text" name="domain" id="domain" placeholder="Domain">
     </md-input-container>
 
     <md-input-container>
-        <input mdInput [(ngModel)]="api" type="text" id="api" name="api" placeholder="api">
+        <input mdInput [(ngModel)]="api" type="text" id="api" name="api" placeholder="API">
     </md-input-container>
 
     <md-input-container>
-        <input mdInput [(ngModel)]="approvedUrl" type="text" name="approvedUrl" id="approvedUrl" placeholder="approvedUrl">
+        <input mdInput [(ngModel)]="approvedUrl" type="text" name="approvedUrl" id="approvedUrl" placeholder="Approved Url">
     </md-input-container>
 
     <md-input-container>
-        <input mdInput [(ngModel)]="declinedUrl" type="text" name="declinedUrl" id="declinedUrl" placeholder="declinedUrl">
+        <input mdInput [(ngModel)]="declinedUrl" type="text" name="declinedUrl" id="declinedUrl" placeholder="Declined Url">
     </md-input-container>
 
     <md-input-container>
-        <input mdInput [(ngModel)]="routingNumber" type="text" name="routingNumber" id="routingNumber" placeholder="routingNumber">
+        <input mdInput [(ngModel)]="routingNumber" type="text" name="routingNumber" id="routingNumber" placeholder="Routing Number">
     </md-input-container>
 
     <md-input-container>
-        <input mdInput [(ngModel)]="customerName" type="text" name="customerName" id="customerName" placeholder="customerName">
+        <input mdInput [(ngModel)]="customerName" type="text" name="customerName" id="customerName" placeholder="Customer Name">
     </md-input-container>
 
     <md-input-container>
-        <input mdInput [(ngModel)]="address" type="text" name="address" id="address" placeholder="address">
+        <input mdInput [(ngModel)]="address" type="text" name="address" id="address" placeholder="Address">
     </md-input-container>
 
     <md-input-container>
-        <input mdInput [(ngModel)]="city" type="text" name="city" id="city" placeholder="city">
+        <input mdInput [(ngModel)]="city" type="text" name="city" id="city" placeholder="City">
     </md-input-container>
 
     <md-input-container>
-        <input mdInput [(ngModel)]="state" type="text" name="state" id="state" placeholder="state">
+        <input mdInput [(ngModel)]="state" type="text" name="state" id="state" placeholder="State">
     </md-input-container>
 
     <md-input-container>
-        <input mdInput [(ngModel)]="zip" type="text" name="zip" id="zip" placeholder="zip">
+        <input mdInput [(ngModel)]="zip" type="text" name="zip" id="zip" placeholder="Zip">
     </md-input-container>
 
     <md-input-container>
-        <input mdInput [(ngModel)]="phone" type="text" name="phone" id="phone" placeholder="phone">
+        <input mdInput [(ngModel)]="phone" type="text" name="phone" id="phone" placeholder="Phone">
     </md-input-container>
 
     <md-input-container>
-        <input mdInput [(ngModel)]="email" type="text" name="email" id="email" placeholder="email">
+        <input mdInput [(ngModel)]="email" type="text" name="email" id="email" placeholder="Email">
     </md-input-container>
 
     <md-input-container>
-        <input mdInput [(ngModel)]="loanNumber" type="text" name="loanNumber" id="loanNumber" placeholder="loanNumber">
+        <input mdInput [(ngModel)]="loanNumber" type="text" name="loanNumber" id="loanNumber" placeholder="Loan Number">
     </md-input-container>
     <md-input-container>
-        <input mdInput [(ngModel)]="loanAmount" type="text" name="loanAmount" id="loanAmount" placeholder="loanAmount">
+        <input mdInput [(ngModel)]="loanAmount" type="text" name="loanAmount" id="loanAmount" placeholder="Loan Amount">
     </md-input-container>
     <md-input-container>
-        <input mdInput [(ngModel)]="loanMemo" type="text" name="loanMemo" id="loanMemo" placeholder="loanMemo">
+        <input mdInput [(ngModel)]="loanMemo" type="text" name="loanMemo" id="loanMemo" placeholder="Loan Memo">
     </md-input-container>
     <md-input-container>
-        <input mdInput [(ngModel)]="bankAccount" type="text" name="bankAccount" id="bankAccount" placeholder="bankAccount">
+        <input mdInput [(ngModel)]="bankAccount" type="text" name="bankAccount" id="bankAccount" placeholder="Bank Account">
     </md-input-container>
     <md-input-container>
-        <input mdInput [(ngModel)]="bankRouting" type="text" name="bankRouting" id="bankRouting" placeholder="bankRouting">
+        <input mdInput [(ngModel)]="bankRouting" type="text" name="bankRouting" id="bankRouting" placeholder="Bank Routing">
     </md-input-container>
     <md-input-container>
-        <input mdInput [(ngModel)]="bankName" type="text" name="bankName" id="bankName" placeholder="bankName">
+        <input mdInput [(ngModel)]="bankName" type="text" name="bankName" id="bankName" placeholder="Bank Name">
     </md-input-container>
     <md-input-container>
-        <input mdInput [(ngModel)]="accountType" type="text" name="accountType" id="accountType" placeholder="accountType">
+        <input mdInput [(ngModel)]="accountType" type="text" name="accountType" id="accountType" placeholder="Account Type">
     </md-input-container>
     
     <div fxLayout="row" fxLayoutAlign="center center">

@@ -69,7 +69,8 @@ export class EncoderComponent {
     return `${query}&${name}=${encoded}`;
   }
 
-  applyDomain(){
+  changeDomain(domain:string){
+    this.domain = domain;
     this.approvedUrl = `https://${this.domain}.demo.alliedpayment.com/PortalPay/app/approved.html`;
     this.declinedUrl = `https://${this.domain}.demo.alliedpayment.com/PortalPay/app/declined.html`;
   }
