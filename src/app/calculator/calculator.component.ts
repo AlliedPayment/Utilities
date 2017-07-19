@@ -14,7 +14,7 @@ export class CalculatorComponent implements OnInit {
     domain: string;
     onBehalfOf: string;
     httpMethod: string;
-    signature: string;
+    header: string;
     timestamp: string;
     timer: NodeJS.Timer;
     runTimer = true;
@@ -28,7 +28,8 @@ export class CalculatorComponent implements OnInit {
 
     generateSignature() {
         if (!this.isValid) return;
-        this.signature = this.crypto.sign(
+
+        this.header = this.crypto.sign(
             this.url,
             this.publicKey,
             this.privateKey,

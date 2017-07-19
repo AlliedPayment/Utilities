@@ -1,7 +1,7 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-.mdl-textfield__error {
-    visibility: visible !important;
-    position: relative;
+.form-container{
+    padding:1em
 }
 
 .results{

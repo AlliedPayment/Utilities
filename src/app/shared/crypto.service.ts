@@ -32,7 +32,7 @@ export class CryptoService {
         if (onBehalfOf) {
             signature = `${signature}onBehalfOf=${onBehalfOf};`;
         }
-        signature = `${signature}timestamp=${ts};signature=${sig};publickey=${publicKey};`;
+        signature = `Authorization: ${signature}timestamp=${ts};signature=${sig};publickey=${publicKey};`;
         return signature;
     }
 

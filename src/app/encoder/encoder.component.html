@@ -1,106 +1,85 @@
-<div class="form-container mdl-grid">
-    <div class="mdl-layout-spacer"></div>
-    <div class="mdl-cell mdl-cell--4-col">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
-            <input [(ngModel)]="api" class="mdl-textfield__input" type="text" id="api">
-            <label class="mdl-textfield__label" for="api">API</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
-            <input [(ngModel)]="approvedUrl" class="mdl-textfield__input" type="text" id="approvedUrl">
-            <label class="mdl-textfield__label" for="approvedUrl">Approved Url</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
-            <input [(ngModel)]="declinedUrl" class="mdl-textfield__input" type="text" id="declinedUrl">
-            <label class="mdl-textfield__label" for="declinedUrl">Decline dUrl</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
-            <input [(ngModel)]="domain" class="mdl-textfield__input" type="text" id="domain">
-            <label class="mdl-textfield__label" for="domain">DOMAIN</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
-            <input [(ngModel)]="routingNumber" class="mdl-textfield__input" type="text" id="routingNumber">
-            <label class="mdl-textfield__label" for="routingNumber">ROUTIN GNUMBER</label>
-        </div>
+<form #encoderForm="ngForm" (ngSubmit)="encode()" class="form-container" fxLayout="column" fxFlexFill>
+    <br />
+    <div fxLayout="row" fxLayoutAlign="start center">
+        <md-checkbox name="isFundingAccount" [(ngModel)]="isFundingAccount">Is Account Funding</md-checkbox>
+    </div>
 
-        <div>
-          <button id="is-funding-toggle" (click)="isFundingAccount = !isFundingAccount" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
-                  <i *ngIf="isFundingAccount" class="material-icons">check_box</i>
-                  <i *ngIf="!isFundingAccount" class="material-icons">check_box_outline_blank</i>
-          </button>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
-              <input [(ngModel)]="isFundingAccount" class="mdl-textfield__input" type="text" id="isFundingAccount">
-              <label class="mdl-textfield__label" for="isFundingAccount">IS FUNDING ACCOUNT</label>
-          </div>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
-            <input [(ngModel)]="customerName" class="mdl-textfield__input" type="text" id="customerName">
-            <label class="mdl-textfield__label" for="customerName">CUSTOMER NAME</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
-            <input [(ngModel)]="address" class="mdl-textfield__input" type="text" id="address">
-            <label class="mdl-textfield__label" for="address">ADDRESS</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
-            <input [(ngModel)]="city" class="mdl-textfield__input" type="text" id="city">
-            <label class="mdl-textfield__label" for="city">CITY</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
-            <input [(ngModel)]="state" class="mdl-textfield__input" type="text" id="state">
-            <label class="mdl-textfield__label" for="state">STATE</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
-            <input [(ngModel)]="zip" class="mdl-textfield__input" type="text" id="zip">
-            <label class="mdl-textfield__label" for="zip">ZIP</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
-            <input [(ngModel)]="phone" class="mdl-textfield__input" type="text" id="phone">
-            <label class="mdl-textfield__label" for="phone">PHONE</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
-            <input [(ngModel)]="email" class="mdl-textfield__input" type="text" id="email">
-            <label class="mdl-textfield__label" for="email">EMAIL</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
-            <input [(ngModel)]="loanNumber" class="mdl-textfield__input" type="text" id="loanNumber">
-            <label class="mdl-textfield__label" for="loanNumber">LOAN NUMBER</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
-            <input [(ngModel)]="loanAmount" class="mdl-textfield__input" type="text" id="loanAmount">
-            <label class="mdl-textfield__label" for="loanAmount">LOAN AMOUNT</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
-            <input [(ngModel)]="loanMemo" class="mdl-textfield__input" type="text" id="loanMemo">
-            <label class="mdl-textfield__label" for="loanMemo">LOAN MEMO</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
-            <input [(ngModel)]="bankAccount" class="mdl-textfield__input" type="text" id="bankAccount">
-            <label class="mdl-textfield__label" for="bankAccount">BANK ACCOUNT</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
-            <input [(ngModel)]="bankRouting" class="mdl-textfield__input" type="text" id="bankRouting">
-            <label class="mdl-textfield__label" for="bankRouting">BANK ROUTING</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
-            <input [(ngModel)]="bankName" class="mdl-textfield__input" type="text" id="bankName">
-            <label class="mdl-textfield__label" for="bankName">BANK NAME</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
-            <input [(ngModel)]="accountType" class="mdl-textfield__input" type="text" id="accountType">
-            <label class="mdl-textfield__label" for="accountType">ACCOUNT TYPE</label>
-        </div>
+    <md-input-container>
+        <input mdInput [(ngModel)]="domain" type="text" name="domain" id="domain" placeholder="domain">
+    </md-input-container>
+
+    <md-input-container>
+        <input mdInput [(ngModel)]="api" type="text" id="api" name="api" placeholder="api">
+    </md-input-container>
+
+    <md-input-container>
+        <input mdInput [(ngModel)]="approvedUrl" type="text" name="approvedUrl" id="approvedUrl" placeholder="approvedUrl">
+    </md-input-container>
+
+    <md-input-container>
+        <input mdInput [(ngModel)]="declinedUrl" type="text" name="declinedUrl" id="declinedUrl" placeholder="declinedUrl">
+    </md-input-container>
+
+    <md-input-container>
+        <input mdInput [(ngModel)]="routingNumber" type="text" name="routingNumber" id="routingNumber" placeholder="routingNumber">
+    </md-input-container>
+
+    <md-input-container>
+        <input mdInput [(ngModel)]="customerName" type="text" name="customerName" id="customerName" placeholder="customerName">
+    </md-input-container>
+
+    <md-input-container>
+        <input mdInput [(ngModel)]="address" type="text" name="address" id="address" placeholder="address">
+    </md-input-container>
+
+    <md-input-container>
+        <input mdInput [(ngModel)]="city" type="text" name="city" id="city" placeholder="city">
+    </md-input-container>
+
+    <md-input-container>
+        <input mdInput [(ngModel)]="state" type="text" name="state" id="state" placeholder="state">
+    </md-input-container>
+
+    <md-input-container>
+        <input mdInput [(ngModel)]="zip" type="text" name="zip" id="zip" placeholder="zip">
+    </md-input-container>
+
+    <md-input-container>
+        <input mdInput [(ngModel)]="phone" type="text" name="phone" id="phone" placeholder="phone">
+    </md-input-container>
+
+    <md-input-container>
+        <input mdInput [(ngModel)]="email" type="text" name="email" id="email" placeholder="email">
+    </md-input-container>
+
+    <md-input-container>
+        <input mdInput [(ngModel)]="loanNumber" type="text" name="loanNumber" id="loanNumber" placeholder="loanNumber">
+    </md-input-container>
+    <md-input-container>
+        <input mdInput [(ngModel)]="loanAmount" type="text" name="loanAmount" id="loanAmount" placeholder="loanAmount">
+    </md-input-container>
+    <md-input-container>
+        <input mdInput [(ngModel)]="loanMemo" type="text" name="loanMemo" id="loanMemo" placeholder="loanMemo">
+    </md-input-container>
+    <md-input-container>
+        <input mdInput [(ngModel)]="bankAccount" type="text" name="bankAccount" id="bankAccount" placeholder="bankAccount">
+    </md-input-container>
+    <md-input-container>
+        <input mdInput [(ngModel)]="bankRouting" type="text" name="bankRouting" id="bankRouting" placeholder="bankRouting">
+    </md-input-container>
+    <md-input-container>
+        <input mdInput [(ngModel)]="bankName" type="text" name="bankName" id="bankName" placeholder="bankName">
+    </md-input-container>
+    <md-input-container>
+        <input mdInput [(ngModel)]="accountType" type="text" name="accountType" id="accountType" placeholder="accountType">
+    </md-input-container>
+    
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <button color="primary" fxFlex="50%" md-raised-button type="submit" [disabled]="!encoderForm.form.valid">Submit</button>
     </div>
-    <div class="mdl-layout-spacer"></div>
-    <div class="mdl-cell mdl-cell--12-col">
-        <div class="mdl-grid">
-            <div class="mdl-layout-spacer"></div>
-            <div class="mdl-cell mdl-cell--4-col">
-                <button (click)="encode()" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Submit</button>
-            </div>
-            <div class="mdl-layout-spacer"></div>
-            <div *ngIf="result" class="mdl-cell mdl-cell--12-col">
-                <h5><small>Result</small></h5>
-                <textarea class="results">{{result}}</textarea>
-            </div>
-        </div>
-    </div>
-</div>
+    <br />
+    <hr>
+    <md-input-container *ngIf="result">
+        <textarea mdInput placeholder="Encoded Result" class="results" [(ngModel)]="result" name="result" id="result"></textarea>
+    </md-input-container>
+</form>

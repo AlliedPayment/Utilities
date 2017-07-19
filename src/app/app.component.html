@@ -1,17 +1,11 @@
-<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
-  <div class="mdl-tabs__tab-bar">
-      <a href="#allied-panel" class="mdl-tabs__tab is-active">Allied</a>
-      <a href="#jetpay-panel" class="mdl-tabs__tab">JetPay</a>
-      <a href="#encoder-panel" class="mdl-tabs__tab">Param Encoder</a>
-  </div>
-
-  <div class="mdl-tabs__panel is-active" id="allied-panel">
-    <calculator></calculator>
-  </div>
-  <div class="mdl-tabs__panel" id="jetpay-panel">
-      <app-jetpay></app-jetpay>
-  </div>
-  <div class="mdl-tabs__panel" id="encoder-panel">
-      <app-encoder></app-encoder>
-  </div>
-</div>
+<md-tab-group>
+    <md-tab label="Allied Auth">
+        <calculator></calculator>
+    </md-tab>
+    <md-tab label="Jet Pay Auth">
+        <app-jetpay></app-jetpay>
+    </md-tab>
+    <md-tab label="Portal Pay Param Encoder">
+        <app-encoder></app-encoder>
+    </md-tab>
+</md-tab-group>

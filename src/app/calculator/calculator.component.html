@@ -1,61 +1,43 @@
-<div class="form-container mdl-grid">
-    <div class="mdl-layout-spacer"></div>
-    <div class="mdl-cell mdl-cell--4-col">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input [(ngModel)]="url" class="mdl-textfield__input" type="text" id="url">
-            <label class="mdl-textfield__label" for="url">Url</label>
-            <span *ngIf="!url" class="mdl-textfield__error">This field is required!</span>
-        </div>
-        <div>
-            <button id="timer-toggle" (click)="toggleTimer()" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
-                <i *ngIf="runTimer" class="material-icons">check_box</i>
-                <i *ngIf="!runTimer" class="material-icons">check_box_outline_blank</i>
-             </button>
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label always-float">
-                <input #timer [(ngModel)]="timestamp" class="mdl-textfield__input" type="text" id="timestamp">
-                <label class="mdl-textfield__label" for="timestamp">Timestamp</label>
-                <span *ngIf="!timestamp" class="mdl-textfield__error">This field is required!</span>
-            </div>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input [(ngModel)]="publicKey" class="mdl-textfield__input" type="text" id="publicKey">
-            <label class="mdl-textfield__label" for="publicKey">Public Key</label>
-            <span *ngIf="!publicKey" class="mdl-textfield__error">This field is required!</span>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input [(ngModel)]="privateKey" class="mdl-textfield__input" type="text" id="privateKey">
-            <label class="mdl-textfield__label" for="privateKey">Private Key</label>
-            <span *ngIf="!privateKey" class="mdl-textfield__error">This field is required!</span>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input [(ngModel)]="username" class="mdl-textfield__input" type="text" id="username">
-            <label class="mdl-textfield__label" for="username">Username</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input [(ngModel)]="domain" class="mdl-textfield__input" type="text" id="domain">
-            <label class="mdl-textfield__label" for="domain">Domain</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input [(ngModel)]="onBehalfOf" class="mdl-textfield__input" type="text" id="onBehalfOf">
-            <label class="mdl-textfield__label" for="onBehalfOf">On Behalf Of</label>
-        </div>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input [(ngModel)]="httpMethod" class="mdl-textfield__input" type="text" id="httpMethod">
-            <label class="mdl-textfield__label" for="httpMethod">Http Method</label>
-        </div>
+<form #calculatorForm="ngForm" (ngSubmit)="generateSignature()" class="form-container" fxLayout="column" fxFlexFill>
+    <br />
+    <md-input-container>
+        <input mdInput [(ngModel)]="url" type="text" id="url" name="url" placeholder="Url" required>
+    </md-input-container>
+    <div fxLayout="row" fxLayoutAlign="start center">
+        <md-checkbox (click)="toggleTimer()" checked="true"></md-checkbox>
+        <md-input-container fxFlexOffset="10px">
+            <input mdInput #timer [(ngModel)]="timestamp" type="text" name="timestamp" id="timestamp" placeholder="Timestamp" required>
+        </md-input-container>
     </div>
-    <div class="mdl-layout-spacer"></div>
-    <div class="mdl-cell mdl-cell--12-col">
-        <div class="mdl-grid">
-            <div class="mdl-layout-spacer"></div>
-            <div class="mdl-cell mdl-cell--4-col">
-                <button (click)="generateSignature()" type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Submit</button>
-            </div>
-            <div class="mdl-layout-spacer"></div>
-            <div *ngIf="signature" class="mdl-cell mdl-cell--12-col">
-                <h5><small>Result</small></h5>
-                <textarea class="results">{{signature}}</textarea>
-            </div>
-        </div>
+    <md-input-container>
+        <input mdInput [(ngModel)]="publicKey" type="text" name="publicKey" id="publicKey" placeholder="Public Key" required>
+    </md-input-container>
+
+    <md-input-container>
+        <input mdInput [(ngModel)]="privateKey" type="text" name="privateKey" id="privateKey" placeholder="Private Key" required>
+    </md-input-container>
+
+    <md-input-container>
+        <input mdInput [(ngModel)]="username" type="text" name="username" id="username" placeholder="Username">
+    </md-input-container>
+
+    <md-input-container>
+        <input mdInput [(ngModel)]="domain" type="text" name="domain" id="domain" placeholder="Domain">
+    </md-input-container>
+
+    <md-input-container>
+        <input mdInput [(ngModel)]="onBehalfOf" type="text" name="onBehalfOf" id="onBehalfOf" placeholder="On Behalf Of">
+    </md-input-container>
+
+    <md-input-container>
+        <input mdInput [(ngModel)]="httpMethod" type="text" name="httpMethod" id="httpMethod" placeholder="HTTP Method">
+    </md-input-container>
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <button color="primary" fxFlex="50%" md-raised-button type="submit" [disabled]="!calculatorForm.form.valid">Submit</button>
     </div>
-</div>
+    <br />
+    <hr>
+    <md-input-container *ngIf="header">
+        <textarea mdInput placeholder="Authorization Header" class="results" [(ngModel)]="header" name="header" id="header"></textarea>
+    </md-input-container>
+</form>
