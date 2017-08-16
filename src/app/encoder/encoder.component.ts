@@ -19,7 +19,7 @@ export class EncoderComponent {
   city: string = 'Fort Wayne';
   state: string = 'IN';
   zip: string = '46815';
-  phone: string = '260-399-7400';
+  phone: string = '2603997400';
   email: string = 'test.user@alliedpayment.com';
   loanNumber: string = '1234567890';
   loanAmount: string = '1.23';

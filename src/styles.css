@@ -1,9 +1,17 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
-.form-container{
-    padding:1em
+body{
+    font-size: 12px;
+}
+.form-container {
+    padding: 1em
 }
 
-.results{
+.results {
     width: 100%;
+}
+
+@media (min-width: 480px) {
+    .mat-input-container {
+        width: 100%;
+    }
 }
