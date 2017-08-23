@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CryptoService } from "../shared";
+import { CryptoService } from '../shared';
 
 @Component({
   selector: 'app-encoder',
@@ -8,11 +8,14 @@ import { CryptoService } from "../shared";
 })
 export class EncoderComponent {
   result: string;
+  id: string;
   api: string = 'https://api.demo.alliedpayment.com';
   domain: string = 'ALLIED';
   routingNumber: string = '074903719';
-  approvedUrl: string = `https://${this.domain}.demo.alliedpayment.com/PortalPay/app/approved.html`;
-  declinedUrl: string = `https://${this.domain}.demo.alliedpayment.com/PortalPay/app/declined.html`;
+  approvedUrl: string = `https://${this
+    .domain}.demo.alliedpayment.com/PortalPay/app/approved.html`;
+  declinedUrl: string = `https://${this
+    .domain}.demo.alliedpayment.com/PortalPay/app/declined.html`;
   isFundingAccount: boolean = false;
   customerName: string = 'Test User';
   address: string = '3201 Stelhorn Rd';
@@ -29,9 +32,7 @@ export class EncoderComponent {
   bankName: string = '';
   accountType: string = 'Checking';
 
-  constructor(
-    private crypto: CryptoService
-  ) { }
+  constructor(private crypto: CryptoService) {}
 
   encode() {
     const data = this.getParams();
@@ -41,6 +42,7 @@ export class EncoderComponent {
 
   getParams(): string {
     var query = `?`;
+    query = this.addParam(query, 'id', this.id, true);
     query = this.addParam(query, 'api', this.api);
     query = this.addParam(query, 'dmn', this.domain);
     query = this.addParam(query, 'rtng', this.routingNumber);
@@ -64,14 +66,18 @@ export class EncoderComponent {
     return query;
   }
 
-  addParam(query, name, value) {
+  addParam(query, name, value, isFirst?: boolean) {
     const encoded = encodeURIComponent(value);
-    return `${query}&${name}=${encoded}`;
+    return isFirst
+      ? `${query}${name}=${encoded}`
+      : `${query}&${name}=${encoded}`;
   }
 
-  changeDomain(domain:string){
+  changeDomain(domain: string) {
     this.domain = domain;
-    this.approvedUrl = `https://${this.domain}.demo.alliedpayment.com/PortalPay/app/approved.html`;
-    this.declinedUrl = `https://${this.domain}.demo.alliedpayment.com/PortalPay/app/declined.html`;
+    this.approvedUrl = `https://${this
+      .domain}.demo.alliedpayment.com/PortalPay/app/approved.html`;
+    this.declinedUrl = `https://${this
+      .domain}.demo.alliedpayment.com/PortalPay/app/declined.html`;
   }
 }
